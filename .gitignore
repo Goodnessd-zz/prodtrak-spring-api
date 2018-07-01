@@ -1,0 +1,15 @@
+*.DS_Store
+.gradle
+build/
+/classes
+!gradle/wrapper/gradle-wrapper.ja
+
+
+###Intellij###
+.idea/libraries
+.idea/markdown*
+.idea/kotlinc.xml
+.idea/workspace.xml
+.idea/uiDesigner.xml
+
+target/
