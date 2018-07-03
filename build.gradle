@@ -1,21 +1,33 @@
-apply plugin: 'java'
-apply plugin: 'application'
+buildscript {
+ repositories {
+  mavenCentral()
+ }
+ dependencies {
+  classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+ }
+}
 
-mainClassName = 'demo.HelloWorld'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
 
 repositories {
  mavenCentral()
 }
 
+bootJar {
+    baseName = 'demo'
+    version = '0.1.0'
+}
+
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
- compile "joda-time:joda-time:2.2"
- testCompile "junit:junit:4.12"
-}
-
-jar {
- baseName = 'gs-gradle'
- version = '0.1.1'
+    compile('org.springframework.boot:spring-boot-starter-jersey')
+    compileOnly('org.projectlombok:lombok:1.16.18')
+    annotationProcessor('org.projectlombok:lombok:1.16.18')
+    testCompile "junit:junit"
 }
