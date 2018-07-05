@@ -27,7 +27,8 @@ targetCompatibility = 1.8
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-jersey')
-    compileOnly('org.projectlombok:lombok:1.16.18')
-    annotationProcessor('org.projectlombok:lombok:1.16.18')
-    testCompile "junit:junit"
+    compileOnly 'org.projectlombok:lombok:1.18.0'
+//    apt "org.projectlombok:lombok:1.18.0"
+    annotationProcessor('org.projectlombok:lombok:1.18.0')
+    testCompile "junit:junit:4.12"
 }

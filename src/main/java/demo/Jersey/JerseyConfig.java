@@ -1,6 +1,6 @@
 package demo.Jersey;
 
-import demo.api.HelloWorldResource;
+import demo.api.UserResource;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
 public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig(){
-        register(HelloWorldResource.class);
+        register(UserResource.class);
     }
 }
