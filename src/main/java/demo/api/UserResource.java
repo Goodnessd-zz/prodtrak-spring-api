@@ -24,6 +24,7 @@ public class UserResource {
 
     @GET
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public static User getUser(){
         return userService.getUser();
     }
