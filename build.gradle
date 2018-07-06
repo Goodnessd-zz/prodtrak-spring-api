@@ -28,7 +28,8 @@ targetCompatibility = 1.8
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-jersey')
     compileOnly 'org.projectlombok:lombok:1.18.0'
-//    apt "org.projectlombok:lombok:1.18.0"
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
     annotationProcessor('org.projectlombok:lombok:1.18.0')
     testCompile "junit:junit:4.12"
 }

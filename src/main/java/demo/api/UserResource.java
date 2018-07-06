@@ -1,6 +1,6 @@
 package demo.api;
 
-import demo.Services.UserService;
+import demo.services.UserService;
 import demo.domain.User;
 import org.springframework.stereotype.Component;
 

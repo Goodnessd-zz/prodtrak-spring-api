@@ -1,4 +1,4 @@
-package demo.Services;
+package demo.services;
 
 import demo.domain.Course;
 import demo.domain.Log;

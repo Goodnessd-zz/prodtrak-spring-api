@@ -1,6 +1,6 @@
 package demo.api;
 
-import demo.Services.CourseService;
+import demo.services.CourseService;
 import demo.domain.Log;
 
 import javax.ws.rs.GET;
