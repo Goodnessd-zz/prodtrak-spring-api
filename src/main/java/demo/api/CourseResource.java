@@ -1,7 +1,7 @@
 package demo.api;
 
 import demo.services.CourseService;
-import demo.domain.Course;
+import demo.domain.Course.Course;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

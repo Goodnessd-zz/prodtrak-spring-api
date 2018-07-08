@@ -1,12 +1,13 @@
 package demo.api;
 
+import demo.domain.User.User;
 import demo.services.UserService;
-import demo.domain.User;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.inject.Inject;
+import javax.validation.constraints.NotNull;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 

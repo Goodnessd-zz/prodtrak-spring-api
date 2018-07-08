@@ -1,4 +1,4 @@
-package demo.domain;
+package demo.domain.Course;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

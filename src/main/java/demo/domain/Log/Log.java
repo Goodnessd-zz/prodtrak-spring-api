@@ -1,4 +1,4 @@
-package demo.domain;
+package demo.domain.Log;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

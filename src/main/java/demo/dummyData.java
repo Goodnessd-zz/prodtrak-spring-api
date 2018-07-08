@@ -1,9 +1,9 @@
 package demo;
 
-import demo.domain.Course;
-import demo.domain.CourseStats;
-import demo.domain.Log;
-import demo.domain.User;
+import demo.domain.Course.Course;
+import demo.domain.Course.CourseStats;
+import demo.domain.Log.Log;
+import demo.domain.User.User;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static demo.domain.LogType.PERSONAL_STUDY;
+import static demo.domain.Log.LogType.PERSONAL_STUDY;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 

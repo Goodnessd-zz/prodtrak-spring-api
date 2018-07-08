@@ -1,6 +1,7 @@
 package demo.services;
 
-import demo.domain.User;
+import demo.domain.User.User;
+import demo.domain.User.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 

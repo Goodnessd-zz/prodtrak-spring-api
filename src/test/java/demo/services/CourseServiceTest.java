@@ -1,7 +1,7 @@
 package demo.services;
 
-import demo.domain.Course;
-import demo.domain.Log;
+import demo.domain.Course.Course;
+import demo.domain.Log.Log;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +26,6 @@ public class CourseServiceTest {
 
         assertThat(course, is(notNullValue()));
         assertThat(course.getCourseName(), is(notNullValue()));
-        assertThat(course.getId(), is(notNullValue()));
         assertThat(course.getLogs(), is(notNullValue()));
         assertThat(course.getStats(), is(notNullValue()));
     }

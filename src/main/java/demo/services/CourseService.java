@@ -1,7 +1,7 @@
 package demo.services;
 
-import demo.domain.Course;
-import demo.domain.Log;
+import demo.domain.Course.Course;
+import demo.domain.Log.Log;
 import demo.dummyData;
 
 import java.util.List;

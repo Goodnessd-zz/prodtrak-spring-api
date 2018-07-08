@@ -1,7 +1,7 @@
 package demo.api;
 
 import demo.services.CourseService;
-import demo.domain.Log;
+import demo.domain.Log.Log;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
