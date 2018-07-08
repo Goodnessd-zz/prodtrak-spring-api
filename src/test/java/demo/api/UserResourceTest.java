@@ -15,9 +15,21 @@ import static org.junit.Assert.*;
 
 public class UserResourceTest {
 
+
+    @Autowired
+    private UserService users;
+
+    private UserResource userResource;
+
+    @Before
+    public void setUp(){
+        userResource = new UserResource(users);
+    }
+
+    @Ignore
     @Test
     public void shouldReturnListOfStudents(){
-        List<User> users = UserResource.getUsers();
+        List<User> users = userResource.getUsers();
 
         assertThat(users, is(notNullValue()));
     }

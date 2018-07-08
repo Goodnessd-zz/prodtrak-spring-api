@@ -15,21 +15,23 @@ import static org.junit.Assert.assertTrue;
 public class UserServiceTest {
 
     private UserService userService;
+    private UserRepository users;
 
     @Before
     public void setUp() {
-        userService = new UserService();
+        userService = new UserService(users);
     }
 
     @Test
     public void shouldGetSingleUser(){
-        User user = userService.getUser();
+        String id = "1234";
+        User user = userService.getUser(id);
 
         assertThat(user.getCourses(), is(notNullValue()));
         assertThat(user.getFirstName(), is(notNullValue()));
         assertThat(user.getLastName(), is(notNullValue()));
         assertThat(user.getUniversityName(), is(notNullValue()));
-        assertThat(user.getId(), is(notNullValue()));
+        assertThat(user.getUserId(), is(notNullValue()));
     }
 
     @Test

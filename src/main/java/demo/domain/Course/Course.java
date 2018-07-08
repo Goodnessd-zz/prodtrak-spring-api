@@ -11,8 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Course {
 
-    @Id
-    String id;
+    @Id String id;
     private final String courseName;
     private CourseStats stats;
     private List<Log> logs;

@@ -15,18 +15,47 @@ import java.util.List;
 @Path("/users")
 public class UserResource {
 
-    private static UserService userService = new UserService();
+    private final UserService users;
+
+    @Inject
+    public UserResource(UserService users){this.users = users;}
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public static List<User> getUsers() {
-        return userService.getUsers();
+    public List<User> getUsers() {
+        return users.getUsers();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public void removeUser(@PathParam("id") String id){
+        users.removeUser(id);
     }
 
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public static User getUser(){
-        return userService.getUser();
+    public User getUser(@PathParam("id") String id){
+        return users.getUser(id);
+    }
+
+    @POST
+    public void addUser(UserRequest user){
+        users.addUser(user.createUser());
+    }
+
+    @Data
+    static class UserRequest {
+        @NotNull
+        private String firstName;
+        @NotNull
+        private String lastName;
+        @NotNull
+        private String university;
+
+        public User createUser(){
+            return new User(firstName, lastName, university);
+        }
+
     }
 }

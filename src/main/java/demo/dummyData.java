@@ -19,24 +19,22 @@ public class dummyData{
     public static List<User> createUsers(){
         List<User> users = new ArrayList<>();
 
-        User user1 = createUser(001, "Goodness", "Daramola", "Biology");
-        User user2 = createUser(002, "Seun", "Akintolope", "Physics");
+        User user1 = createUser("Goodness", "Daramola", "Cal Poly Pomona","Biology");
+        User user2 = createUser("Seun", "Akintolope", "Cal State Long Beach", "Physics");
 
         return asList(user1, user2);
     }
 
-    public static User createUser(int id, String firstName, String lastName, String courseName){
-        User user = new User(id, firstName, lastName);
-        user.setCourses(createCourses(101, courseName));
-        user.setUniversityName("Cal Poly Pomona");
-
+    public static User createUser(String firstName, String lastName, String universityName, String courseName){
+        User user = new User(firstName, lastName, universityName);
+        user.setCourses(createCourses(courseName));
         return user;
 
     }
 
-    public static List<Course> createCourses(int id, String courseName) {
-        Course course1 = new Course(id, courseName);
-        Course course2 = new Course(id, "Calculus");
+    public static List<Course> createCourses(String courseName) {
+        Course course1 = new Course(courseName);
+        Course course2 = new Course("Calculus");
         return Arrays.asList(course1, course2);
     }
 
@@ -45,7 +43,7 @@ public class dummyData{
     }
 
     public static Course createCourse() {
-        Course course = new Course(123, "Biology 300");
+        Course course = new Course("Biology 300");
         course.setLogs(createLogs());
         course.setStats(createStats());
         return course;
