@@ -2,27 +2,33 @@ package demo.services;
 
 import demo.domain.Course.Course;
 import demo.domain.Log.Log;
+import demo.domain.User.User;
+import demo.mongo.MemoryCourseRepository;
+import demo.mongo.MemoryUserRepository;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
 
+import static demo.dummyData.COURSE_ID;
+import static demo.dummyData.USER_ID;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 
 public class CourseServiceTest {
 
+    public static final String LOG_ID = "1";
     CourseService courseService;
 
     @Before
     public void setup(){
-        courseService = new CourseService();
+        courseService = new CourseService(new MemoryCourseRepository());
     }
 
     @Test
     public void shouldGetSingleCourse() {
-        Course course = courseService.getCourse();
+        Course course = courseService.getCourse(COURSE_ID);
 
         assertThat(course, is(notNullValue()));
         assertThat(course.getCourseName(), is(notNullValue()));
@@ -32,14 +38,15 @@ public class CourseServiceTest {
 
     @Test
     public void shouldGetAllCourses() {
-        List<Course> courses = courseService.getCourses();
+        String userId = USER_ID;
+        List<Course> courses = courseService.getCourses(userId);
 
         assertThat(courses.size() > 0, is(true));
     }
 
     @Test
     public void shouldGetSingleLogForCourse() {
-        Log log = courseService.getLog(100, 1);
+        Log log = courseService.getLog(COURSE_ID, LOG_ID);
 
         assertThat(log.getDescription(), is(notNullValue()));
         assertThat(log.getDuration(), is(notNullValue()));
@@ -51,8 +58,16 @@ public class CourseServiceTest {
 
     @Test
     public void shouldGetAllLogsForCourse(){
-        List<Log> logs = courseService.getLogs(100);
+        List<Log> logs = courseService.getLogs(COURSE_ID);
 
         assertTrue(logs.size() > 0);
+    }
+
+    @Test
+    public void shouldCreateIdForCourse(){
+        Course test_course = new Course("test course");
+        User user = new User("User", "mcDonald", "mcdonalds");
+        assertThat(user, is(notNullValue()));
+        assertThat(test_course, is(notNullValue()));
     }
 }

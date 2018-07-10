@@ -27,7 +27,14 @@ public class MongoUserRepository implements UserRepository{
 
     @Override
     public void put(User user) {
-        repository.insert(user);
+        User existingUser = repository.findByUserId(user.getUserId());
+
+        if(existingUser != null){
+            repository.save(user);
+        }
+        else{
+            repository.insert(user);
+        }
     }
 
     @Override

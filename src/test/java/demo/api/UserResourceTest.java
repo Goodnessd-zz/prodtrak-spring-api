@@ -1,6 +1,7 @@
 package demo.api;
 
 import demo.domain.User.User;
+import demo.mongo.MemoryUserRepository;
 import demo.services.UserService;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -14,19 +15,14 @@ import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.*;
 
 public class UserResourceTest {
-
-
-    @Autowired
-    private UserService users;
-
     private UserResource userResource;
 
     @Before
     public void setUp(){
+        UserService users = new UserService(new MemoryUserRepository());
         userResource = new UserResource(users);
     }
 
-    @Ignore
     @Test
     public void shouldReturnListOfStudents(){
         List<User> users = userResource.getUsers();

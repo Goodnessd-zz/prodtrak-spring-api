@@ -2,11 +2,13 @@ package demo.services;
 
 import demo.domain.User.User;
 import demo.domain.User.UserRepository;
+import demo.mongo.MemoryUserRepository;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
 
+import static demo.dummyData.USER_ID;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
@@ -15,17 +17,15 @@ import static org.junit.Assert.assertTrue;
 public class UserServiceTest {
 
     private UserService userService;
-    private UserRepository users;
 
     @Before
     public void setUp() {
-        userService = new UserService(users);
+        userService = new UserService(new MemoryUserRepository());
     }
 
     @Test
     public void shouldGetSingleUser(){
-        String id = "1234";
-        User user = userService.getUser(id);
+        User user = userService.getUser(USER_ID);
 
         assertThat(user.getCourses(), is(notNullValue()));
         assertThat(user.getFirstName(), is(notNullValue()));

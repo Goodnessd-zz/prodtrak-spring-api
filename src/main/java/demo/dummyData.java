@@ -27,6 +27,7 @@ public class dummyData{
 
     public static User createUser(String firstName, String lastName, String universityName, String courseName){
         User user = new User(firstName, lastName, universityName);
+        user.setUserId("1234");
         user.setCourses(createCourses(courseName));
         return user;
 
@@ -34,7 +35,16 @@ public class dummyData{
 
     public static List<Course> createCourses(String courseName) {
         Course course1 = new Course(courseName);
+        course1.setCourseId(COURSE_ID);
+        course1.setLogs(createLogs());
+        course1.setStats(createStats());
+
         Course course2 = new Course("Calculus");
+        course2.setCourseId(COURSE_ID);
+        course2.setLogs(createLogs());
+        course2.setStats(createStats());
+
+
         return Arrays.asList(course1, course2);
     }
 
@@ -44,6 +54,7 @@ public class dummyData{
 
     public static Course createCourse() {
         Course course = new Course("Biology 300");
+        course.setCourseId(COURSE_ID);
         course.setLogs(createLogs());
         course.setStats(createStats());
         return course;
@@ -56,10 +67,11 @@ public class dummyData{
 
     public static Log createLog() {
         LocalDateTime localDateTime = LocalDateTime.now().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        Log log = new Log(100, "Studied", localDateTime);
+        Log log = new Log("Studied", localDateTime);
         log.setDescription("studied for hella long");
         log.setDuration(100);
         log.setType(PERSONAL_STUDY);
+        log.setId("1");
 
         return log;
     }
