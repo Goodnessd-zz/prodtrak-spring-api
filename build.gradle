@@ -30,6 +30,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.0'
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     compile("org.springframework.boot:spring-boot-starter-data-rest")
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
     annotationProcessor('org.projectlombok:lombok:1.18.0')
     testCompile "junit:junit:4.12"
 }
