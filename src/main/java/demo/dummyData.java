@@ -16,6 +16,10 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 
 public class dummyData{
+
+    public static final String COURSE_ID = "5678";
+    public static final String USER_ID = "1234";
+
     public static List<User> createUsers(){
         List<User> users = new ArrayList<>();
 

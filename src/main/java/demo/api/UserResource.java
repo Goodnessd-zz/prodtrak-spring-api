@@ -3,6 +3,7 @@ package demo.api;
 import demo.domain.User.User;
 import demo.services.UserService;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
@@ -17,7 +18,7 @@ public class UserResource {
 
     private final UserService users;
 
-    @Inject
+    @Autowired
     public UserResource(UserService users){this.users = users;}
 
     @GET
@@ -27,15 +28,15 @@ public class UserResource {
     }
 
     @DELETE
-    @Path("/{id}")
-    public void removeUser(@PathParam("id") String id){
+    @Path("/{userId}")
+    public void removeUser(@PathParam("userId") String id){
         users.removeUser(id);
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User getUser(@PathParam("id") String id){
+    public User getUser(@PathParam("userId") String id){
         return users.getUser(id);
     }
 
