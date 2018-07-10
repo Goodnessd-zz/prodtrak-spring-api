@@ -1,15 +1,11 @@
 package demo.api;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import demo.services.CourseService;
+import demo.domain.Course.CourseService;
 import demo.domain.Course.Course;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

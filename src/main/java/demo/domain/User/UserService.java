@@ -1,4 +1,4 @@
-package demo.services;
+package demo.domain.User;
 
 import demo.domain.User.User;
 import demo.domain.User.UserRepository;

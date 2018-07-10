@@ -1,4 +1,4 @@
-package demo.services;
+package demo.domain.Course;
 
 import demo.domain.Course.Course;
 import demo.domain.Course.CourseRepository;

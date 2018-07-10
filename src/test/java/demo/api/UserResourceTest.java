@@ -2,8 +2,8 @@ package demo.api;
 
 import demo.mongo.MemoryCourseRepository;
 import demo.mongo.MemoryUserRepository;
-import demo.services.CourseService;
-import demo.services.UserService;
+import demo.domain.Course.CourseService;
+import demo.domain.User.UserService;
 import org.junit.Before;
 import org.junit.Test;
 

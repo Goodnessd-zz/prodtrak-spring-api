@@ -1,10 +1,10 @@
 package demo.services;
 
 import demo.domain.Course.Course;
+import demo.domain.Course.CourseService;
 import demo.domain.Log.Log;
 import demo.domain.User.User;
 import demo.mongo.MemoryCourseRepository;
-import demo.mongo.MemoryUserRepository;
 import org.junit.Before;
 import org.junit.Test;
 

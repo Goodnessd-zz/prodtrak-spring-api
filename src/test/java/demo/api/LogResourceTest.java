@@ -2,8 +2,7 @@ package demo.api;
 
 import demo.domain.Log.Log;
 import demo.mongo.MemoryCourseRepository;
-import demo.mongo.MemoryUserRepository;
-import demo.services.CourseService;
+import demo.domain.Course.CourseService;
 import org.junit.Test;
 
 import java.util.List;

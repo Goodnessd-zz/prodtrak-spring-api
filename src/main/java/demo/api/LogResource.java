@@ -1,6 +1,6 @@
 package demo.api;
 
-import demo.services.CourseService;
+import demo.domain.Course.CourseService;
 import demo.domain.Log.Log;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

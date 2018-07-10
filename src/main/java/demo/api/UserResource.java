@@ -2,14 +2,13 @@ package demo.api;
 
 import demo.domain.Course.Course;
 import demo.domain.User.User;
-import demo.services.CourseService;
-import demo.services.UserService;
+import demo.domain.Course.CourseService;
+import demo.domain.User.UserService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

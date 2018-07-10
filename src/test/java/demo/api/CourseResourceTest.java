@@ -2,7 +2,7 @@ package demo.api;
 
 import demo.domain.Course.Course;
 import demo.mongo.MemoryCourseRepository;
-import demo.services.CourseService;
+import demo.domain.Course.CourseService;
 import org.junit.Test;
 
 import static demo.dummyData.COURSE_ID;

@@ -1,7 +1,7 @@
 package demo.services;
 
 import demo.domain.User.User;
-import demo.domain.User.UserRepository;
+import demo.domain.User.UserService;
 import demo.mongo.MemoryUserRepository;
 import org.junit.Before;
 import org.junit.Test;
