@@ -27,7 +27,6 @@ public class UserServiceTest {
     public void shouldGetSingleUser(){
         User user = userService.getUser(USER_ID);
 
-        assertThat(user.getCourses(), is(notNullValue()));
         assertThat(user.getFirstName(), is(notNullValue()));
         assertThat(user.getLastName(), is(notNullValue()));
         assertThat(user.getUniversityName(), is(notNullValue()));

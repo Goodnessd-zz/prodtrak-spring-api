@@ -21,8 +21,6 @@ public class dummyData{
     public static final String USER_ID = "1234";
 
     public static List<User> createUsers(){
-        List<User> users = new ArrayList<>();
-
         User user1 = createUser("Goodness", "Daramola", "Cal Poly Pomona","Biology");
         User user2 = createUser("Seun", "Akintolope", "Cal State Long Beach", "Physics");
 
@@ -32,25 +30,25 @@ public class dummyData{
     public static User createUser(String firstName, String lastName, String universityName, String courseName){
         User user = new User(firstName, lastName, universityName);
         user.setUserId("1234");
-        user.setCourses(createCourses(courseName));
+
         return user;
 
     }
 
-    public static List<Course> createCourses(String courseName) {
-        Course course1 = new Course(courseName);
-        course1.setCourseId(COURSE_ID);
-        course1.setLogs(createLogs());
-        course1.setStats(createStats());
-
-        Course course2 = new Course("Calculus");
-        course2.setCourseId(COURSE_ID);
-        course2.setLogs(createLogs());
-        course2.setStats(createStats());
-
-
-        return Arrays.asList(course1, course2);
-    }
+//    public static List<Course> createCourses(String courseName) {
+//        Course course1 = new Course(courseName);
+//        course1.setCourseId(COURSE_ID);
+//        course1.setLogs(createLogs());
+//        course1.setStats(createStats());
+//
+//        Course course2 = new Course("Calculus");
+//        course2.setCourseId(COURSE_ID);
+//        course2.setLogs(createLogs());
+//        course2.setStats(createStats());
+//
+//
+//        return Arrays.asList(course1, course2);
+//    }
 
     public static List<Course> createCourses() {
         return singletonList(createCourse());
