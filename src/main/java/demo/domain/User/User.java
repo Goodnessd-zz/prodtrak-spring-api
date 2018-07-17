@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 @Getter
 @Setter
 @RequiredArgsConstructor
@@ -16,4 +18,14 @@ public class User {
     private final String firstName;
     private final String lastName;
     private final String universityName;
+    private final String username;
+    private final String email;
+    private final String password;
+    private List<Role> roles;
+
+    public String getName(){
+        return firstName + " " + lastName;
+    }
+
+
 }

@@ -3,7 +3,6 @@ package demo.domain.Log;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
@@ -11,8 +10,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Log {
-    @Id
-    private String id;
+    private final Integer id;
     private final String name;
     private final LocalDateTime timestamp;
     private String description;

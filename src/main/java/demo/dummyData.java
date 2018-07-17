@@ -69,11 +69,10 @@ public class dummyData{
 
     public static Log createLog() {
         LocalDateTime localDateTime = LocalDateTime.now().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        Log log = new Log("Studied", localDateTime);
+        Log log = new Log(1,"Studied", localDateTime);
         log.setDescription("studied for hella long");
         log.setDuration(100);
         log.setType(PERSONAL_STUDY);
-        log.setId("1");
 
         return log;
     }

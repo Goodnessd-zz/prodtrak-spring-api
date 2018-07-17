@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/users/{userId}/courses")
+
 public class CourseResource {
 
     private CourseService courseService;
@@ -29,7 +30,6 @@ public class CourseResource {
 
     @POST
     public void createCourse(@PathParam("userId") String userId, CourseRequest courseRequest){
-        System.out.println(courseRequest.toCourse());
         courseService.addCourse(userId, courseRequest.toCourse());
     }
 
@@ -38,6 +38,12 @@ public class CourseResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Course getCourse(@PathParam("courseId") String courseId){
         return courseService.getCourse(courseId);
+    }
+
+    @DELETE
+    @Path("/{courseId}")
+    public void removeCourse(@PathParam("courseId") String courseId){
+        courseService.removeCourse(courseId);
     }
 
     @Data

@@ -24,4 +24,12 @@ public class Course {
     public void addLog(Log log) {
         logs.add(log);
     }
+
+    public Integer logCount(){
+        return logs.size();
+    }
+
+    public void remove(Log log) {
+        logs.remove(log);
+    }
 }

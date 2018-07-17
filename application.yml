@@ -1,0 +1,3 @@
+app:
+  jwtSecret: ${SecretKey}
+  jwtExpirationInMs: 604800000
