@@ -1,13 +1,6 @@
-*.DS_Store
-.gradle
-/out
-./out
-out/
-/build/
-/classes
-!gradle/wrapper/gradle-wrapper.ja
+.gradle/
+build/
 
-
-.idea
-
-target/
+# IntelliJ 
+.idea/
+*.iml
