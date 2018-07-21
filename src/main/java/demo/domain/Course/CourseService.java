@@ -1,7 +1,5 @@
 package demo.domain.Course;
 
-import demo.domain.Course.Course;
-import demo.domain.Course.CourseRepository;
 import demo.domain.Log.Log;
 import org.springframework.stereotype.Component;
 
