@@ -32,7 +32,7 @@ public class CourseService {
         }
     }
 
-    public Log getLog(String courseId, String logId) {
+    public Log getLog(String courseId, Integer logId) {
         Course course = courseRepository.get(courseId);
         if (null != course) {
             return course.getLogs().stream().filter(log -> log.getId().equals(logId)).findFirst().orElse(null);
@@ -44,7 +44,10 @@ public class CourseService {
     public void createLog(String courseId, Log log) {
         Course course = courseRepository.get(courseId);
         if(null != course){
+            Integer id = course.getLogs().size() + 1;
+            log.setId(id);
             course.addLog(log);
+            courseRepository.put(course);
         }
         else {
             System.out.println("unable to create log");

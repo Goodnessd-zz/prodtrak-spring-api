@@ -54,6 +54,7 @@ public class UserResource {
 
     @POST
     public void addUser(UserRequest user){
+
         users.addUser(user.createUser());
     }
 

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Log {
     @Id
-    private String id;
+    private Integer id;
     private final String name;
     private final LocalDateTime timestamp;
     private String description;

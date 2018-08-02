@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 
 public class CourseServiceTest {
 
-    public static final String LOG_ID = "1";
+    public static final Integer LOG_ID = 1;
     CourseService courseService;
 
     @Before

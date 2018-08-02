@@ -73,7 +73,7 @@ public class dummyData{
         log.setDescription("studied for hella long");
         log.setDuration(100);
         log.setType(PERSONAL_STUDY);
-        log.setId("1");
+        log.setId(1);
 
         return log;
     }
