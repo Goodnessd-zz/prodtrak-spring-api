@@ -17,4 +17,4 @@ COPY --from=builder /source/build/libs ./
 
 EXPOSE 8080
 
-ENTRYPOINT java -jar demo-0.1.0.jar
+ENTRYPOINT java -jar -Dspring.mongodb.uri=mongodb://mongo/demo -Dspring.profiles.active=container demo.jar

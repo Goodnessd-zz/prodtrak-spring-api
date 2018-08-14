@@ -1,27 +1,36 @@
 package demo.mongo;
 
+import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import org.springframework.boot.autoconfigure.mongo.MongoProperties;
+import com.mongodb.MongoClientURI;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 
 @EnableMongoRepositories(basePackages = "demo.mongo")
 @Configuration
-@EnableConfigurationProperties(MongoProperties.class)
-public class MongoConfig extends AbstractMongoConfiguration {
+@EnableConfigurationProperties
+@ConfigurationProperties
+public class MongoConfig{
+    private final String uri;
+    private MongoClient mongoClient;
 
 
-    @Override
-    public MongoClient mongoClient() {
-        return new MongoClient("127.0.0.1", 27017);
+    @Autowired
+    public MongoConfig(@Value("${spring.mongodb.uri}") String uri){
+        System.out.println(uri);
+        this.uri = uri;
+        this.mongoClient = new MongoClient(new MongoClientURI(uri));
     }
 
-    @Override
-    protected String getDatabaseName() {
-        return "demo";
+    @Bean
+    public MongoTemplate mongoTemplate() throws Exception{
+        return new MongoTemplate(mongoClient, "demo");
     }
-
 }

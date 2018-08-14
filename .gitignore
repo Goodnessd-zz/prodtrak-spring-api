@@ -6,3 +6,4 @@ out/
 # IntelliJ.idea
 .idea/
 *.iml
+data

@@ -1,0 +1,5 @@
+spring.mongodb.uri: mongodb://localhost:27017
+---
+#URI should be specified via Entrypoint in Dockerfile
+spring:
+  profiles: container
