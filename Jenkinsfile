@@ -2,8 +2,8 @@ pipeline {
     agent none
     stages {
         stage('build') {
+            agent { docker { image 'openjdk:8-jdk-alpine' }}
             steps {
-                agent { docker { image 'openjdk:8-jdk-alpine' }}
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
                 stash includes: 'demo.jar', name: 'jar'
@@ -19,11 +19,6 @@ pipeline {
             agent any
             steps {
                 unstash 'jar'
-                copyArtifacts(
-                        projectName: 'prodtrak-spring-api',
-                        filter: '**/*.jar',
-
-                )
                 sh 'docker build . -t prodtrak'
             }
         }
