@@ -1,10 +1,9 @@
 #App
 FROM openjdk:8u131-jdk-alpine
-LABEL builder=false
 VOLUME tmp/
 WORKDIR /deploy
 
-COPY --from=builder /source/build/libs ./
+COPY /build/libs ./
 
 EXPOSE 8080
 

@@ -1,4 +1,4 @@
-package demo.jersey;
+package demo;
 
 import demo.api.CourseResource;
 import demo.api.LogResource;

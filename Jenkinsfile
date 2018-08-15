@@ -11,5 +11,10 @@ pipeline {
                 sh './gradlew test --no-daemon'
             }
         }
+        stage('build docker image') {
+            steps {
+                sh 'docker build . -t'
+            }
+        }
     }
 }
