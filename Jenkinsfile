@@ -6,5 +6,10 @@ pipeline {
                 sh './gradlew build --no-daemon'
             }
         }
+        stage('test') {
+            steps {
+                sh './gradlew test --no-daemon'
+            }
+        }
     }
 }
