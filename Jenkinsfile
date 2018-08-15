@@ -12,6 +12,7 @@ pipeline {
             }
         }
         stage('build docker image') {
+            agent none
             steps {
                 sh 'docker build . -t prodtrak'
             }
