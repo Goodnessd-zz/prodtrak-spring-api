@@ -5,6 +5,7 @@ pipeline {
             agent { docker { image 'openjdk:8-jdk-alpine' }}
             steps {
                 sh './gradlew build --no-daemon'
+                archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
             }
         }
         stage('test') {
