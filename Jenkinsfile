@@ -13,7 +13,7 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                sh 'docker build . -t'
+                sh 'docker build . -t prodtrak'
             }
         }
     }
