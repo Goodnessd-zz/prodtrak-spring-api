@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
+                stash includes: 'demo.jar', name: 'jar'
             }
         }
         stage('test') {
@@ -16,7 +17,13 @@ pipeline {
         }
         stage('build docker image') {
             agent any
+            unstash 'jar'
             steps {
+                copyArtifacts(
+                        projectName: 'prodtrak-spring-api',
+                        filter: '**/*.jar',
+
+                )
                 sh 'docker build . -t prodtrak'
             }
         }
