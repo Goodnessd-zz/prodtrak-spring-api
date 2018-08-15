@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
-                stash includes: 'demo.jar', name: 'jar'
+                stash includes: '**/build/libs/*.jar', name: 'jar'
             }
         }
         stage('test') {
