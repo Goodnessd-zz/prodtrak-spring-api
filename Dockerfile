@@ -1,12 +1,3 @@
-#Build
-FROM openjdk:8-jdk-alpine as builder
-LABEL builder=true
-
-WORKDIR /source
-
-COPY ./ ./
-RUN ./gradlew build --no-daemon
-
 #App
 FROM openjdk:8u131-jdk-alpine
 LABEL builder=false
