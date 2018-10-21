@@ -40,3 +40,8 @@ jobs:
 
       # run tests!
       - run: ./gradlew test
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: prodtrak
